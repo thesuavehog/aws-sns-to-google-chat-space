@@ -1,0 +1,9 @@
+docs:
+  - changed-files:
+    - any-glob-to-any-file: ['docs/**', '**/*.md']
+
+dependencies:
+  - changed-files:
+    - any-glob-to-any-file:
+      - package-lock.json
+      - yarn.lock

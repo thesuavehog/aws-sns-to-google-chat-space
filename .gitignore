@@ -1,0 +1,19 @@
+node_modules
+.aws-sam/
+dist/
+*.tsbuildinfo
+.env.json
+.DS_Store
+.jest-coverage/
+.tmp/
+junit.xml
+
+cdk.context.json
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out/
+
+# outputs and logs
+cdk-outputs.json
+*-output.log

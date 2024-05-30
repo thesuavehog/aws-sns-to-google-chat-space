@@ -1,0 +1,86 @@
+{
+  "cardsV2": [
+    {
+      "cardId": "<$.messageId>",
+      "card": {
+        "header": {
+          "title": "{{title}}: <$.body.AlarmName> [<$.body.NewStateValue>]",
+          "subtitle": "<$.body.Trigger.Namespace> - <$.body.Trigger.MetricName>",
+          "imageUrl": "{{icon}}",
+          "imageType": "CIRCLE"
+        },
+        "sections": [
+          {
+            "collapsible": true,
+            "uncollapsibleWidgetsCount": 0,
+            "widgets": [
+              {
+                "textParagraph": {
+                  "text": "<$.body.NewStateValue>: <$.body.AlarmDescription>"
+                }
+              },
+              {
+                "textParagraph": {
+                  "text": "<$.body.NewStateReason>"
+                }
+              },
+              {
+                "columns": {
+                  "columnItems": [
+                    {
+                      "horizontalSizeStyle": "FILL_AVAILABLE_SPACE",
+                      "verticalAlignment": "CENTER",
+                      "widgets": [
+                        {
+                          "decoratedText": {
+                            "startIcon": {
+                              "materialIcon": {
+                                "name": "check_box",
+                                "fill": false,
+                                "weight": 500,
+                                "grade": 200
+                              }
+                            },
+                            "topLabel": "<$.body.Trigger.Namespace>",
+                            "text": "<$.body.Trigger.MetricName>",
+                            "bottomLabel": "<$.body.OldStateValue> -> <$.body.NewStateValue>"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "horizontalAlignment": "END",
+                      "widgets": [
+                        {
+                          "buttonList": {
+                            "buttons": [
+                              {
+                                "text": "View Alarms",
+                                "color": {
+                                  "red": 0.2,
+                                  "green": 0.6,
+                                  "blue": 0.2,
+                                  "alpha": 1
+                                },
+                                "onClick": {
+                                  "openLink": {
+                                    "url": "https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#alarmsV2:?~(sortingColumn~'state~sortingDirection~'ASC)",
+                                    "openAs": "FULL_SIZE"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

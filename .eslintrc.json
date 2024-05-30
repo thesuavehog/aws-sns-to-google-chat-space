@@ -1,0 +1,148 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": false
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "tsconfig.json",
+      "infrastructure/tsconfig.json"
+    ],
+    "sourceType": "script",
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "impliedStrict": true
+    },
+    "extraFileExtensions": [".json"]
+  },
+  "ignorePatterns": [
+    "/dist/**/*" // Ignore built files.
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "import-newlines",
+    "sort-imports-es6-autofix",
+    "security",
+    "jsdoc"
+  ],
+  "rules": {
+    "quotes": ["error", "single"],
+    "indent": [
+      "error",
+      "tab",
+      {
+        "MemberExpression": 0,
+        "FunctionDeclaration": {
+          "parameters": "first"
+        },
+        "ImportDeclaration": "first",
+        "SwitchCase": 1,
+        "CallExpression": {
+          "arguments": "first"
+        },
+        "ObjectExpression": "first"
+      }
+    ],
+    "max-len": 0,
+    "eol-last": "off",
+    "linebreak-style": ["error", "unix"],
+    "object-curly-spacing": ["error", "always"],
+    "prefer-arrow-callback": ["error"],
+    "no-var": ["error"],
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all",
+        "ignoreReadBeforeAssign": false
+      }
+    ],
+    "require-await": ["warn"],
+    "quote-props": ["error", "as-needed"],
+    "no-undef": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_",
+        // "destructuredArrayIgnorePattern": "^_", // unsupported in ESLint 7?
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "no-const-assign": "error",
+    "no-console": "error",
+    "require-jsdoc": "warn",
+    "one-var": [
+      "warn",
+      {
+        "let": "never",
+        "const": "never"
+      }
+    ],
+    // TBD - temp override camel case for Handler prefixes
+    "camelcase": [
+      "error",
+      {
+        "allow": ["^Handle*"]
+      }
+    ],
+    "no-invalid-regexp": "error",
+    "prefer-named-capture-group": "warn",
+    "new-parens": "error",
+    "padded-blocks": "off",
+    "curly": ["error", "all"],
+    "no-trailing-spaces": [
+      "off",
+      {
+        "skipBlankLines": true,
+        "ignoreComments": true
+      }
+    ],
+    "no-multiple-empty-lines": "off",
+    "operator-linebreak": [
+      "warn",
+      "before",
+      {
+        "overrides": {
+          "=": "after"
+        }
+      }
+    ],
+    "no-multi-spaces": "off",
+    "@typescript-eslint/no-floating-promises": ["error"],
+    "sort-imports-es6-autofix/sort-imports-es6": [
+      "warn"
+    ],
+    "no-duplicate-imports": ["error", { "includeExports": true }],
+    "import-newlines/enforce": [
+      "error",
+      {
+          "items": 2,
+          "semi": true
+      }
+    ],
+    "security/detect-unsafe-regex": "warn",
+    "security/detect-buffer-noassert": "warn",
+    "security/detect-non-literal-regexp": "warn",
+    "security/detect-possible-timing-attacks": "warn",
+    "security/detect-new-buffer": "warn",
+    "jsdoc/no-undefined-types": 1
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.json"
+      ],
+      "rules": {
+        "indent": ["error", 2]
+      }
+    }
+  ]
+}

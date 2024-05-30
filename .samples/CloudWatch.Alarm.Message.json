@@ -1,0 +1,43 @@
+{
+    "AlarmName": "TestAlerts",
+    "AlarmDescription": "This is a test alarm that should fire a LOT just to test with event handling (Jeff Bacon)",
+    "AWSAccountId": "123456789012",
+    "AlarmConfigurationUpdatedTimestamp": "2024-05-27T20:50:04.427+0000",
+    "NewStateValue": "OK",
+    "NewStateReason": "Threshold Crossed: no datapoints were received for 1 period and 1 missing datapoint was treated as [NonBreaching].",
+    "StateChangeTime": "2024-05-27T20:50:21.843+0000",
+    "Region": "US East (N. Virginia)",
+    "AlarmArn": "arn:aws:cloudwatch:us-east-1:123456789012:alarm:TestAlerts",
+    "OldStateValue": "INSUFFICIENT_DATA",
+    "OKActions": [
+        "arn:aws:sns:us-east-1:123456789012:TestAlerts"
+    ],
+    "AlarmActions": [
+        "arn:aws:sns:us-east-1:123456789012:TestAlerts"
+    ],
+    "InsufficientDataActions": [],
+    "Trigger": {
+        "MetricName": "Requests",
+        "Namespace": "AWS/CloudFront",
+        "StatisticType": "Statistic",
+        "Statistic": "SUM",
+        "Unit": null,
+        "Dimensions": [
+            {
+                "value": "Global",
+                "name": "Region"
+            },
+            {
+                "value": "E38XF2MSUGGSE7",
+                "name": "DistributionId"
+            }
+        ],
+        "Period": 10,
+        "EvaluationPeriods": 1,
+        "DatapointsToAlarm": 1,
+        "ComparisonOperator": "GreaterThanThreshold",
+        "Threshold": 0,
+        "TreatMissingData": "notBreaching",
+        "EvaluateLowSampleCountPercentile": ""
+    }
+}

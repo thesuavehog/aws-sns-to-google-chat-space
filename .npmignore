@@ -1,0 +1,20 @@
+.vscode/
+.git*
+tsconfig*
+.npmignore
+src
+.gitlab*
+.old/
+template.y*
+test/
+.utilities/
+doc/
+.eslint*
+samconfig.toml
+
+*.ts
+!*.d.ts
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out

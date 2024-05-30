@@ -44,7 +44,7 @@
     "list": "cdk list",
     "compile": "tsc",
     "dev:doctor": "npm run doctor -- --profile=aws-sns-to-api-destination.Developer -c Environment=dev",
-    "dev:synth": "npm run synth -- --profile=aws-sns-to-api-destination.Developer -c Environment=dev",
+    "dev:synth": "npm run synth -- -c Environment=dev",
     "dev:deploy": "npm run deploy -- --profile=aws-sns-to-api-destination.Developer --notification-arns=arn:aws:sns:us-east-1:############:CloudFormation-Notifications -c Environment=dev",
     "dev:list": "npm run list -- --profile=aws-sns-to-api-destination.Developer -c Environment=dev",
     "dev:cdk-sync": "npm run cdk-sync --environment=dev --aws-args=\"--profile aws-sns-to-api-destination.Developer\"",

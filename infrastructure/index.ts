@@ -33,7 +33,7 @@ class SnsToGoogleChatSpacePipe extends App {
 			generateBootstrapVersionRule: false,
 		});
 
-		new CloudWatchAlertsToGoogleChatSpaceStack(
+		const stack = new CloudWatchAlertsToGoogleChatSpaceStack(
 			this,
 			'CloudWatchAlertsToGoogleChatSpaceStack',
 			{
@@ -41,6 +41,10 @@ class SnsToGoogleChatSpacePipe extends App {
 				env,
 			},
 		);
+		stack.addMetadata(
+			'repo',
+			stack.node.tryGetContext('metadata:repo') ?? 'https://github.com/thesuavehog/aws-sns-to-google-chat-space'
+		)
 
 	}
 

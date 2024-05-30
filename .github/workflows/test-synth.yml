@@ -1,0 +1,59 @@
+# This workflow just does some simple synth tests to make sure that the core
+# synth functionality is working as expected. It is not intended to be a
+# comprehensive test of the synth functionality. It is just a smoke test.
+
+name: Test Synth
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-synth:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJs
+        uses: actions/setup-node@v4
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Test - Synth
+        run: |
+          npm run dev:synth
+
+  test-synth-context:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      matrix:
+        context:
+          - GoogleChatMessageTitle=Something
+          - GoogleChatMessageIcon=="Https://example.com/favicon.png"
+          - GoogleChatLabel=Test_Space
+          - GoogleChatSpaceEndpoint="https://chat.googleapis.com/v1/spaces/AAAAgsawsufh7/messages?key=AIzaSyDkq&token=sdidfd"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJs
+        uses: actions/setup-node@v4
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Test - Synth
+        run: |
+          npm run dev:synth -- -c ${{ matrix.context }}

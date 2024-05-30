@@ -35,6 +35,7 @@ export function getCloudWatchAlarm(state: StateValue, replace?: Record<string, s
 	return {
 		inputTemplate: Object.entries(replace).reduce(
 			(acc, [ key, value ]) =>
+				// eslint-disable-next-line security/detect-non-literal-regexp
 				acc.replace(new RegExp(`{{${key}}}`, 'g'), value),
 			result.inputTemplate
 		),

@@ -73,8 +73,8 @@ export interface ISnsToApiDestinationPipeProps extends Omit<IPipeProps, 'source'
  * An intermediary SQS queue is used to buffer messages between the SNS topic and the
  * API destination because EventBridge Pipes cannit directly use an SNS Topic as a source.
  *
- * The {@link source} topic subscription can have a filter applied to it to limit the messages
- * that are processed by the pipe and the {@link target} can have an input transformation
+ * The {@link SnsToApiDestinationPipe.source|source} topic subscription can have a filter applied to it to limit the messages
+ * that are processed by the pipe and the {@link SnsToApiDestinationPipe.target|target} can have an input transformation
  * applied to it before the message is sent to the API Destination.
  */
 export class SnsToApiDestinationPipe extends Construct {

@@ -35,7 +35,7 @@
     "typescript": "^5.4.5"
   },
   "scripts": {
-    "lint": "eslint src --ext .js,.ts",
+    "lint": "eslint . --ext .js,.ts",
     "lint:fix": "npm run lint -- --fix --fix-type layout",
     "watch": "npm run dev:compile -- --watch",
     "doctor": "cdk doctor",

@@ -24,7 +24,7 @@ import type { StateValue } from '@aws-sdk/client-cloudwatch';
  *   "MessageIcon": "https://projecta.com/favicon.png",
  *   "Space": {
  *     "Label": "ProjectA_Alerts",
- *     "Endpoint": "https://chat.googleapis.com/v1/spaces/AAAAeusufh7/messages?key=AIzaSyDkq&token=sdidfd
+ *     "Endpoint": "https://chat.googleapis.com/v1/spaces/AAAAeusufh7/messages?key=AIzaSyDkq&token=sdidfd"
  *   }
  * }
  * ```
@@ -35,7 +35,7 @@ import type { StateValue } from '@aws-sdk/client-cloudwatch';
  *   "GoogleChatMessageTitle": "ProjectA",
  *   "GoogleChatMessageIcon": "https://projecta.com/favicon.png",
  *   "GoogleChatSpaceLabel": "ProjectA_Alerts",
- *   "GoogleChatSpaceEndpoint": "https://chat.googleapis.com/v1/spaces/AAAAeusufh7/messages?key=AIzaSyDkq&token=sdidfd
+ *   "GoogleChatSpaceEndpoint": "https://chat.googleapis.com/v1/spaces/AAAAeusufh7/messages?key=AIzaSyDkq&token=sdidfd"
  * }
  * ```
  *

@@ -13,3 +13,25 @@ updates:
       - "thesuavehog"
     assignees:
       - "thesauvehog"
+    commit-message:
+      prefix: "fix: "
+    groups:
+      patches:
+        applies-to: version-updates
+        update-types:
+          - "patch"
+        exclude-patterns:
+          - "@aws-sdk/*"
+          - "aws-cdk*"
+          - "cdk"
+          - "constructs"
+      aws-sdk:
+        applies-to: version-updates
+        patterns:
+          - "@aws-sdk/*"
+          - "aws-cdk*"
+          - "cdk"
+          - "constructs"
+        update-types:
+          - "patch"
+          - "minor"

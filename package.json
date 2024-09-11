@@ -12,7 +12,7 @@
     "@types/aws-lambda": "^8.10.145",
     "@types/node": "^20.16.5",
     "@types/source-map-support": "^0.5.10",
-    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
     "@typescript-eslint/parser": "^7.18.0",
     "aws-cdk": "^2.156.0",
     "aws-cdk-lib": "^2.156.0",

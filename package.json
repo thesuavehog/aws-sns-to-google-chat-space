@@ -22,7 +22,7 @@
     "dotenv": "^16.4.7",
     "esbuild": "^0.25.1",
     "eslint": "^8.57.1",
-    "eslint-import-resolver-typescript": "^3.8.3",
+    "eslint-import-resolver-typescript": "^4.2.2",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-import-newlines": "^1.4.0",
     "eslint-plugin-jsdoc": "^50.6.6",

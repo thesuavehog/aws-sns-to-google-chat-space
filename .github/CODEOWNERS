@@ -1,0 +1,10 @@
+# Dependency updates
+package.json                  @thesuavehog
+package-lock.json            @thesuavehog
+
+# Infrastructure code
+/infrastructure/             @thesuavehog
+*.ts                        @thesuavehog
+
+# CDK configuration
+cdk.json                    @thesuavehog

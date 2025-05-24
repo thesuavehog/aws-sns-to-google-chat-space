@@ -9,10 +9,8 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
-    reviewers:
-      - "thesuavehog"
     assignees:
-      - "thesauvehog"
+      - "thesuavehog"
     commit-message:
       prefix: "fix: "
     groups:

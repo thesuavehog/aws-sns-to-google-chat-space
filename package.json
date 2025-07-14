@@ -19,7 +19,7 @@
     "cdk-nag": "^2.36.38",
     "constructs": "^10.4.2",
     "cross-env": "^7.0.3",
-    "dotenv": "^17.0.1",
+    "dotenv": "^17.2.0",
     "esbuild": "^0.25.6",
     "eslint": "^8.57.1",
     "eslint-import-resolver-typescript": "^4.4.4",

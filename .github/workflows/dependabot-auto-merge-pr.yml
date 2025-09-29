@@ -18,14 +18,34 @@ jobs:
         uses: dependabot/fetch-metadata@v2
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - name: Approve a PR
-        if: steps.metadata.outputs.update-type == 'version-update:semver-patch' && steps.metadata.outputs.dependency-group == 'patches'
+      - name: Approve AWS SDK group PR
+        if: steps.metadata.outputs.dependency-group == 'aws-sdk'
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Enable auto-merge for Dependabot PRs
-        if: steps.metadata.outputs.update-type == 'version-update:semver-patch' && steps.metadata.outputs.dependency-group == 'patches'
+
+      - name: Check only AWS SDK dependencies are updated
+        if: steps.metadata.outputs.dependency-group == 'aws-sdk'
+        run: |
+          set -e
+          FILES=$(gh pr view "$PR_URL" --json files --jq '.files[].path')
+          for file in $FILES; do
+            if [[ "$file" != "package.json" && "$file" != "package-lock.json" && "$file" != "yarn.lock" ]]; then
+              echo "Non-dependency file changed: $file"
+              exit 1
+            fi
+          done
+          # Check that only AWS SDK dependencies are updated
+          gh pr view "$PR_URL" --json body --jq '.body' | grep -E '@aws-sdk/|aws-cdk|cdk|constructs' || {
+            echo "No AWS SDK dependency updates found in PR body"; exit 1;
+          }
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Enable auto-merge for AWS SDK group PRs
+        if: steps.metadata.outputs.dependency-group == 'aws-sdk'
         run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}

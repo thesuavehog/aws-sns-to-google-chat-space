@@ -6,7 +6,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@aws-sdk/client-cloudwatch": "^3.896.0",
-    "@aws-sdk/client-sns": "^3.896.0",
+    "@aws-sdk/client-sns": "^3.901.0",
     "@aws-sdk/types": "^3.901.0",
     "@raphaelmanke/aws-cdk-pipes-rfc": "^0.0.16",
     "@types/aws-lambda": "^8.10.152",

@@ -16,7 +16,7 @@
     "@typescript-eslint/parser": "^7.18.0",
     "aws-cdk": "^2.1029.4",
     "aws-cdk-lib": "^2.217.0",
-    "cdk-nag": "^2.37.45",
+    "cdk-nag": "^2.37.51",
     "constructs": "^10.4.2",
     "cross-env": "^10.0.0",
     "dotenv": "^17.2.3",

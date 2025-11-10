@@ -14,7 +14,7 @@
     "@types/source-map-support": "^0.5.10",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "aws-cdk": "^2.1029.4",
+    "aws-cdk": "^2.1031.2",
     "aws-cdk-lib": "^2.217.0",
     "cdk-nag": "^2.37.55",
     "constructs": "^10.4.3",

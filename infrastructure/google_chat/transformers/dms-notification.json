@@ -1,0 +1,94 @@
+{
+  "cardsV2": [
+    {
+      "cardId": "<$.MessageId>",
+      "card": {
+        "header": {
+          "title": "{{title}}: <$.Subject> [<$.body.SourceId>]",
+          "imageUrl": "{{icon}}",
+          "imageType": "SQUARE"
+        },
+        "sections": [
+          {
+            "collapsible": true,
+            "uncollapsibleWidgetsCount": 3,
+            "widgets": [
+              {
+                "textParagraph": {
+                  "text": "<$.body.Event Message>"
+                }
+              },
+              {
+                "columns": {
+                  "columnItems": [
+                    {
+                      "horizontalSizeStyle": "FILL_AVAILABLE_SPACE",
+                      "verticalAlignment": "CENTER",
+                      "widgets": [
+                        {
+                          "decoratedText": {
+                            "startIcon": {
+                              "materialIcon": {
+                                "name": "description",
+                                "fill": false,
+                                "weight": 500,
+                                "grade": 200
+                              }
+                            },
+                            "topLabel": "replication-task",
+                            "text": "<$.body.EventSource>"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "horizontalAlignment": "END",
+                      "widgets": [
+                        {
+                          "buttonList": {
+                            "buttons": [
+                              {
+                                "text": "View Task",
+                                "color": {
+                                  "red": 0.2,
+                                  "green": 0.6,
+                                  "blue": 0.2,
+                                  "alpha": 1
+                                },
+                                "onClick": {
+                                  "openLink": {
+                                    "url": "<$.body.Identifier Link>",
+                                    "openAs": "FULL_SIZE"
+                                  }
+                                }
+                              },
+                              {
+                                "text": "Event Docs",
+                                "color": {
+                                  "red": 0.8,
+                                  "green": 0.8,
+                                  "blue": 1.0,
+                                  "alpha": 1
+                                },
+                                "onClick": {
+                                  "openLink": {
+                                    "url": "<$.body.Event ID>",
+                                    "openAs": "FULL_SIZE"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

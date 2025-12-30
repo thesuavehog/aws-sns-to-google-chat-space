@@ -1,0 +1,8 @@
+{
+  "Event Source": "replication-task",
+  "Event Time": "2024-06-18 15:07:22.563",
+  "Identifier Link": "[https://console.aws.amazon.com/dms/v2/home?region=us-west-1#taskDetails/TASK_NAME ](https://console.aws.amazon.com/dms/v2/home?region=us-west-1#taskDetails/TASK_NAME%20)",
+  "SourceId": "TASK_NAME",
+  "Event ID": "[http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html#DMS-EVENT-0078 ](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html#DMS-EVENT-0078%20)",
+  "Event Message": "Replication task has failed.\nReason: Last Error  Network error has occurred Stop Reason RECOVERABLE_ERROR Error Level RECOVERABLE."
+}

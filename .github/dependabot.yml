@@ -18,12 +18,20 @@ updates:
         applies-to: version-updates
         update-types:
           - "patch"
+        exclude-patterns:
+          - "@aws-sdk/*"
+          - "aws-cdk*"
+          - "cdk"
+          - "cdk-nag"
+          - "constructs"
       aws-sdk:
         applies-to: version-updates
         patterns:
           - "@aws-sdk/*"
           - "aws-cdk*"
           - "cdk"
+          - "cdk-nag"
           - "constructs"
         update-types:
           - "minor"
+          - "patch"

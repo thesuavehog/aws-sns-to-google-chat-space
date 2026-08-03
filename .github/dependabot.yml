@@ -13,6 +13,13 @@ updates:
       - "thesuavehog"
     commit-message:
       prefix: "fix: "
+    ignore:
+      # TypeScript 7 removes moduleResolution=node10 and breaks @typescript-eslint/parser
+      # (ts.SyntaxKind.BarBarToken no longer resolves); needs a typescript-eslint major
+      # bump before we can move off TypeScript 6.
+      - dependency-name: "typescript"
+        update-types:
+          - "version-update:semver-major"
     groups:
       patches:
         applies-to: version-updates

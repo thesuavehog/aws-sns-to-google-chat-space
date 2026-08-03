@@ -10,6 +10,7 @@ import {
 	CfnCondition,
 	CfnResource,
 	Token,
+	Validations,
 } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import {
@@ -18,7 +19,6 @@ import {
 	QueueEncryption,
 } from 'aws-cdk-lib/aws-sqs';
 import { type ITopic, Topic } from 'aws-cdk-lib/aws-sns';
-import { NagSuppressions } from 'cdk-nag';
 import { SqsSubscription, type SqsSubscriptionProps } from 'aws-cdk-lib/aws-sns-subscriptions';
 import { TRANSFORM_SQS_BODY_SNS_RAW } from '../constants';
 import { toTopic } from '../utils';
@@ -131,13 +131,11 @@ export class SnsToApiDestinationPipe extends Construct {
 			enforceSSL: true,
 			encryption: QueueEncryption.SQS_MANAGED,
 		});
-		NagSuppressions.addResourceSuppressions(
-			this.intermediaryQueue,
-			[
-				// AwsSolutions-SQS3: The SQS queue is not used as a dead-letter queue (DLQ) and does not have a DLQ enabled.
-				{ id: 'AwsSolutions-SQS3', reason: 'Delivery to EventBridge Pipes will never fail' },
-			],
-		);
+		// AwsSolutions-SQS3: The SQS queue is not used as a dead-letter queue (DLQ) and does not have a DLQ enabled.
+		Validations.of(this.intermediaryQueue).acknowledge({
+			id: 'AwsSolutions::AwsSolutions-SQS3',
+			reason: 'Delivery to EventBridge Pipes will never fail',
+		});
 
 		this.source.addSubscription(new SqsSubscription(this.intermediaryQueue, source.subscriptionProps));
 

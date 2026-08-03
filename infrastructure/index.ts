@@ -2,9 +2,9 @@ import 'source-map-support/register';
 import {
 	App,
 	type AppProps,
-	Aspects,
 	DefaultStackSynthesizer,
 	type Environment,
+	Validations,
 } from 'aws-cdk-lib';
 import { AwsSolutionsChecks } from 'cdk-nag';
 import { CloudWatchAlertsToGoogleChatSpaceStack } from './CloudWatchAlertsToGoogleChatSpaceStack';
@@ -20,7 +20,7 @@ class SnsToGoogleChatSpacePipe extends App {
 
 		this.build();
 
-		Aspects.of(this).add(new AwsSolutionsChecks({
+		Validations.of(this).addPlugins(new AwsSolutionsChecks(this, {
 			verbose: true,
 		}));
 	}
